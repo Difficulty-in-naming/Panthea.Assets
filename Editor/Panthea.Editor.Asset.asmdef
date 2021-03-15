@@ -1,0 +1,22 @@
+{
+    "name": "Panthea.Editor.Asset",
+    "references": [
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:69448af7b92c7f342b298e06a37122aa",
+        "GUID:a3beee000661b42419d72602ddd2c32e",
+        "GUID:b7179b7ed593e634091add66d9405318",
+        "GUID:5c1ff9bd975acec488150743d53a93ca",
+        "GUID:c5ecc461727906345a35491a0440694f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

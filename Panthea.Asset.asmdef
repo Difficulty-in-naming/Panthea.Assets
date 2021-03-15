@@ -1,0 +1,21 @@
+{
+    "name": "Panthea.Asset",
+    "references": [
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:a3beee000661b42419d72602ddd2c32e",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:151ffa7394ba57e499fb69568860d524"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "System.Memory.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
