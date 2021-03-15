@@ -84,8 +84,8 @@ foreach (var node in paths)
 }
 ```
 
-## **如何拆分包体内文件**
-首先你需要通过Tools/Addressable/Pack打包所有的AB文件,然后修改AddressableAssetsData/AssetGroups的AB配置文件.通过修改配置文件Bundle Mode为Pack Separately即可
+## **如何拆分包体内文件或者使用LZ4/LZMA的方式打包某个AB**
+首先你需要通过Tools/Addressable/Pack打包所有的AB文件,然后修改AddressableAssetsData/AssetGroups的AB配置文件.
 
 ## **FAQ**
 Q : 什么时候资源会被卸载.  
