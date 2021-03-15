@@ -84,16 +84,16 @@ foreach (var node in paths)
 }
 ```
 
-## **如何拆分包体**
-首先你需要通过Tools/Addressable/Pack打包所有的AB文件,此时每个文件夹下会生成一个对应的AB配置文件.通过修改配置文件Bundle Mode为Pack Separately即可
+## **如何拆分包体内文件或者使用LZ4/LZMA的方式打包某个AB**
+首先你需要通过Tools/Addressable/Pack打包所有的AB文件,然后修改AddressableAssetsData/AssetGroups的AB配置文件.
 
 ## **FAQ**
 Q : 什么时候资源会被卸载.  
 A : 当你的资源是通过AssetsManager.Load<>或AssetsManager.Initialize进行加载创建的.并且使用AssetsManager.Destroy进行卸载.那么当资源的引用计数为0时.资源会自动释放内存.  
 Q ：运行效率怎么样.  
-A ：下图为XFramework与Addressables的加载耗时![图片](https://github.com/Noname-Studio/XFramework/blob/master/Docs/pic/XFrameworkResourcesLoadPerformance.png)  
+A ：下图为Panthea.Assets与Addressables的加载耗时![图片](https://github.com/Noname-Studio/XFramework/blob/master/Docs/pic/XFrameworkResourcesLoadPerformance.png)  
 通常大多数框架在加载AB的时候使用的都是UnityWebRequest进行加载.因为UnityWebRequest在安卓下可以加载StreamingAssets目录下的AB文件.XFramework中只有在下载AB文件的时候使用了UnityWebRequest,加载的时候使用的是AssetBundle.LoadFromFileAsync/LoadFromStreamAsync.这是官方加载AssetBundle最快的方式.  
 Q ：为什么占用内存这么高  
-A ：首先你要确认你使用的压缩方式是否为LZMA.因为这种方式Unity在加载的时候会将所有资源解压到Memory中.方便后续调用.一般我建议单张大图才使用LZMA压缩.但是如果你依然决定使用LZMA压缩的话.你可以在下载AB之后使用AssetBundle.RecompressAssetBundleAsync将LZMA转换为LZ4压缩.其次你需要检查代码中是否有资源没有按照规范卸载.这会导致AB一直保留在内存中无法被自动卸载.如果不太在意资源卸载的话.你们可以在切换场景的时候调用IAssetLocator.UnloadAllAssetBundle().卸载所有的AB
+A ：首先你要确认你使用的压缩方式是否为LZMA.因为这种方式Unity在加载的时候会将所有资源解压到Memory中.方便后续调用.一般我建议单张大图才使用LZMA压缩.但是如果你依然决定使用LZMA压缩的话.你可以在下载AB之后使用AssetBundle.RecompressAssetBundleAsync将LZMA转换为LZ4压缩.其次你需要检查代码中是否有资源没有按照规范卸载.这会导致AB一直保留在内存中无法被自动卸载.如果不太在意资源卸载的话.你们可以在切换场景的时候调用AssetsKit.UnloadAllAssetBundle().卸载所有的AB
 
 
