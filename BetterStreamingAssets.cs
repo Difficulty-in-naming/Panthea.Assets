@@ -1,5 +1,10 @@
 ﻿using System;
 using System.IO;
+#if UNITY_ANDROID && !UNITY_EDITOR
+using System.IO.Compression;
+using System.Text;
+using UnityEngine;
+#endif
 
 namespace Panthea.Asset
 {
